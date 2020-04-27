@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
-// import { reducer, initialState } from './../reducers/ToDoReducer';
+import React, { useState, useReducer } from 'react';
+import { reducer, initialState } from './../reducers/ToDoReducer';
 
 const AddToDo = () => {
-    // const [state, dispatch] = useReducer(reducer, initialState)
+    const [state, dispatch] = useReducer(reducer, initialState)
     const [newTodo, setNewTodo] = useState('');
 
     const handleChange = event => {
-        console.log(event.target.value);
+        console.log('Entered: ', event.target.value);
         setNewTodo(event.target.value)
     }
 
     const submitTodo = event => {
-        event.preventDefault()
+        event.preventDefault();
+        console.log('Submit: ', newTodo);
+        return (dispatch({ type: "ADD", payload: newTodo}));
+        setNewTodo('')
     }
 
     return (
@@ -35,3 +38,4 @@ export default AddToDo;
 
 // 1. input field takes string
 // 2. adds string to state
+// 3. sends state to reducer with ADD dispatch
