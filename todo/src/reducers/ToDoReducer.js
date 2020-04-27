@@ -5,6 +5,11 @@ const initialState = [
         item: 'Learn about reducers',
         completed: false,
         id: 3892987580
+    },
+    {
+        item: 'Revocate the agitator',
+        completed: false,
+        id: 6666666666
     }
 ]
 
