@@ -6,14 +6,14 @@ function ToDoList() {
     const [state, dispatch] = useReducer(reducer, initialState)
 
     return (
+        // console.log(state.tasklist),
         <div>
-            {state.map(todo => {
+            {state.tasklist.map(todo => {
                 return <div key={todo.id}>{todo.item}</div>
             })}
             <AddToDo />
         </div>
         // console.log(state),
-        // null
     )
 }
 

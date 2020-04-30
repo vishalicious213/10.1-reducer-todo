@@ -13,13 +13,13 @@ const AddToDo = () => {
     const submitTodo = event => {
         event.preventDefault();
         console.log('Submit: ', newTodo);
-        return (dispatch({ type: "ADD", payload: newTodo}));
+        dispatch({ type: "ADD", payload: newTodo});
         setNewTodo('')
     }
 
     return (
         <div>
-            <div>Add Todo</div>
+            <div>-Add Todo-</div>
             <form onSubmit={submitTodo}>
                 <input type='text' 
                     name='newTodo'
